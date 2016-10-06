@@ -1,0 +1,2 @@
+class Hackzor < ApplicationRecord
+end

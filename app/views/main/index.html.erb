@@ -1,0 +1,23 @@
+<%= @error %>
+
+<h1>Hello<%= " #{@name}" if @name %>!</h1>
+<h2>This site has been pwnz0r3d by the following h4ck3rz. Are you on the list?</h2>
+<% if @hackzors.present? %>
+  <ul>
+    <% @hackzors.each do |hackzor| %>
+      <li>
+        <%= hackzor.leet_handle %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  No one has hackzored this site yet, lol u noobs
+<% end %>
+
+<hr>
+
+<h2>Please enter your name here to see if you are worthy of being added to this elite list</h2>
+(note: your name must be entered inside quotation marks, or you will break the site)
+<%= form_tag(root_path, method: :get) do %>
+  <%= text_field_tag(:name) %>
+<% end %>
